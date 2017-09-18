@@ -33,6 +33,7 @@ public class RNImmediatePhoneCallModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void immediatePhoneCall(String number) {
+        number = Uri.encode(number);
         String url = "tel:" + number;
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(url));
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
