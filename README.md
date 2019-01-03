@@ -23,7 +23,7 @@ Or manual:  add the latest version as dependeny to your package.json.
   },
   "dependencies": {
     ...
-    "react-native-immediate-phone-call": "0.1.0",
+    "react-native-immediate-phone-call": "^1.0.0",
     ...
   }
 ```
@@ -45,7 +45,7 @@ Or manual:  add the latest version as dependeny to your package.json.
   ```
 * In the build.gradle
   ```
-    compile project(':react-native-immediate-phone-call')
+    implementation project(':react-native-immediate-phone-call')
   ```
 * In MainApplication.java
   ```
@@ -61,6 +61,21 @@ Or manual:  add the latest version as dependeny to your package.json.
     }
     ...
   ```
+* MainActivity.java
+  ```
+    import com.github.wumke.RNImmediatePhoneCall.RNImmediatePhoneCallPackage;  // <--- import
+    ...
+    public class MainActivity extends ReactActivity {      
+      ...
+      @Override
+      public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+          RNImmediatePhoneCallPackage.onRequestPermissionsResult(requestCode, permissions, grantResults); // very important event callback
+          super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+      }    
+      ...
+    }
+  ```
+
 ## Usage
 
 ```javascript
