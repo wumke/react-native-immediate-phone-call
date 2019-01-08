@@ -37,6 +37,7 @@ Or manual:  add the latest version as dependeny to your package.json.
 * In the AndroidManifest.xml file of your android studio project add:
     ```
     <uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     ```
 * In the settings.gradle
   ```
@@ -81,7 +82,7 @@ Or manual:  add the latest version as dependeny to your package.json.
 ```javascript
 import RNImmediatePhoneCall from 'react-native-immediate-phone-call';
 ...
-RNImmediatePhoneCall.immediatePhoneCall('0123456789');
+RNImmediatePhoneCall.immediatePhoneCall('0123456789',0); //default 1st simcard
 ...
 ```
 
