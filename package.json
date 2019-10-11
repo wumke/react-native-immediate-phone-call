@@ -23,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/wumke/react-native-immediate-phone-call/issues"
   },
-  "homepage": "http://watchwimswork.be"
+  "homepage": "http://watchwimswork.be",
+  "peerDependencies": {
+    "react-native": "^0.59.8"
+  },
+  "devDependencies": {
+    "react-native": "^0.59.9"
+  }
 }
