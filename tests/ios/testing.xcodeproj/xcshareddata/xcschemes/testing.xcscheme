@@ -26,15 +26,24 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4FAA010A22AEF13E005DC98E"
+            BuildableName = "testing.app"
+            BlueprintName = "testing"
+            ReferencedContainer = "container:testing.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2BDF002D8121E420C29979BD4C2DB392"
-            BuildableName = "RNCallKeep.framework"
-            BlueprintName = "RNCallKeep"
+            BlueprintIdentifier = "E1004221BBCDE254BCEB952710BA91CA"
+            BuildableName = "RNImmediatePhoneCall.framework"
+            BlueprintName = "RNImmediatePhoneCall"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -49,28 +58,7 @@
                ReferencedContainer = "container:testing.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "74F0ED07EF3409C894CD9152A75F2D5E"
-               BuildableName = "RNCallKeep-Unit-UnitTests.xctest"
-               BlueprintName = "RNCallKeep-Unit-UnitTests"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4FAA010A22AEF13E005DC98E"
-            BuildableName = "testing.app"
-            BlueprintName = "testing"
-            ReferencedContainer = "container:testing.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -92,8 +80,6 @@
             ReferencedContainer = "container:testing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
