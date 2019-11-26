@@ -1,20 +1,23 @@
 # react-native-immediate-phone-call
+
 Initiate immediate phone call (without further user interaction) for React Native on iOS and Android.
-The difference with [react-native-phone-call](https://github.com/tiaanduplessis/react-native-phone-call) and [react-native-communications](https://github.com/anarchicknight/react-native-communications) is that with this library no additional user input is required for Android and the call starts instantly (Apple always asks confirmation since the last iOs updates...). 
+The difference with [react-native-phone-call](https://github.com/tiaanduplessis/react-native-phone-call) and [react-native-communications](https://github.com/anarchicknight/react-native-communications) is that with this library no additional user input is required for Android and the call starts instantly (Apple always asks confirmation since the last iOs updates...).
 
 NOTICE:
+
 - for React Native < 0.47 use react-native-immediate-phone-call <1.x.x
 - for React Native > 0.47 use react-native-immediate-phone-call >=1.x.x
 
 ## Setup
 
 Fast and easy:
+
 ```bash
 npm install react-native-immediate-phone-call --save
 react-native link react-native-immediate-phone-call
 ```
 
-Or manual:  add the latest version as dependeny to your package.json.
+Or manual: add the latest version as dependency to your package.json.
 
 ```javascript
 {
@@ -29,26 +32,44 @@ Or manual:  add the latest version as dependeny to your package.json.
 ```
 
 #### iOS
-* Add RNImmediatePhoneCall.xcoderproj into your project in the Libraries folder.
-* Add the .a file on the General tab of your target under Linked Frameworks And Libraries
-* Add the .a file on the Build Phases tab of your target under Link Binary With Libraries
+
+- Add RNImmediatePhoneCall.xcoderproj into your project in the Libraries folder.
+- Add the .a file on the General tab of your target under Linked Frameworks And Libraries.
+- Add the .a file on the Build Phases tab of your target under Link Binary With Libraries.
+- For iOS 9.0 and above it's mandatory to have `LSApplicationQueriesSchemes` in `info.plist` after `</dict>`
+
+```xml
+  <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>tel</string>
+        <string>telprompt</string>
+    </array>
+```
 
 #### Android
-* In the AndroidManifest.xml file of your android studio project add:
-    ```
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    ```
-* In the settings.gradle
+
+- In the AndroidManifest.xml file of your android studio project add:
+
+  ```java
+  <uses-permission android:name="android.permission.CALL_PHONE" />
   ```
+
+- In the settings.gradle
+
+  ```java
     include ':react-native-immediate-phone-call', ':app'
     project(':react-native-immediate-phone-call').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-immediate-phone-call/android')
   ```
-* In the build.gradle
-  ```
+
+- In the build.gradle
+
+  ```gradle
     implementation project(':react-native-immediate-phone-call')
   ```
-* In MainApplication.java
-  ```
+
+- In MainApplication.java
+
+  ```java
     import com.github.wumke.RNImmediatePhoneCall.RNImmediatePhoneCallPackage;
     ...
     @Override
@@ -61,17 +82,19 @@ Or manual:  add the latest version as dependeny to your package.json.
     }
     ...
   ```
-* MainActivity.java
-  ```
+
+- MainActivity.java
+
+  ```java
     import com.github.wumke.RNImmediatePhoneCall.RNImmediatePhoneCallPackage;  // <--- import
     ...
-    public class MainActivity extends ReactActivity {      
+    public class MainActivity extends ReactActivity {
       ...
       @Override
       public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
           RNImmediatePhoneCallPackage.onRequestPermissionsResult(requestCode, permissions, grantResults); // very important event callback
           super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-      }    
+      }
       ...
     }
   ```
