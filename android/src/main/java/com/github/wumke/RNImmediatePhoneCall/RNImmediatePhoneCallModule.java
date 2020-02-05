@@ -4,9 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -37,7 +37,7 @@ public class RNImmediatePhoneCallModule extends ReactContextBaseJavaModule {
     public void immediatePhoneCall(String number) {
         RNImmediatePhoneCallModule.number = Uri.encode(number);
 
-        if (ContextCompat.checkSelfPermission(reactContext.getApplicationContext(),
+        if (ContextCompat.checkSelfPermission(getReactApplicationContext(),
                 android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
             call();
         } else {
