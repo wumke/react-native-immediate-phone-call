@@ -4,7 +4,8 @@ The difference with [react-native-phone-call](https://github.com/tiaanduplessis/
 
 NOTICE:
 - for React Native < 0.47 use react-native-immediate-phone-call <1.x.x
-- for React Native > 0.47 use react-native-immediate-phone-call >=1.x.x
+- for React Native 0.47 - 0.59 use react-native-immediate-phone-call >=1.x.x
+- for React Native >= 0.60 use react-native-immediate-phone-call >=2.x.x
 
 ## Setup
 
