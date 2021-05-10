@@ -46,7 +46,7 @@ Or manual:  add the latest version as dependeny to your package.json.
     include ':react-native-immediate-phone-call', ':app'
     project(':react-native-immediate-phone-call').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-immediate-phone-call/android')
   ```
-* In the build.gradle
+* In the app/build.gradle
   ```
     implementation project(':react-native-immediate-phone-call')
   ```
