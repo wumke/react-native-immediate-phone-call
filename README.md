@@ -1,14 +1,18 @@
 # react-native-immediate-phone-call
 
 Initiate immediate phone call (without further user interaction) for React Native on iOS and Android.
+
 The difference with [react-native-phone-call](https://github.com/tiaanduplessis/react-native-phone-call) and [react-native-communications](https://github.com/anarchicknight/react-native-communications) is that with this library no additional user input is required for Android and the call starts instantly (Apple always asks confirmation since the last iOs updates...).
 
 NOTICE:
 
 - for React Native < 0.47 use react-native-immediate-phone-call <1.x.x
-- for React Native > 0.47 use react-native-immediate-phone-call >=1.x.x
+- for React Native 0.47 - 0.59 use react-native-immediate-phone-call >=1.x.x
+- for React Native >= 0.60 use react-native-immediate-phone-call >=2.x.x
 
 ## Setup
+
+(NOTICE THAT INSTALLATION STEPS FOR NEWER REACT NATIVE VERSIONS MAY BE DIFFERENT...)
 
 Fast and easy:
 
@@ -61,9 +65,8 @@ Or manual: add the latest version as dependency to your package.json.
     project(':react-native-immediate-phone-call').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-immediate-phone-call/android')
   ```
 
-- In the build.gradle
-
-  ```gradle
+- In the app/build.gradle
+  ```java
     implementation project(':react-native-immediate-phone-call')
   ```
 
