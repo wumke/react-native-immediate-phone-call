@@ -14,10 +14,16 @@ NOTICE:
 
 (NOTICE THAT INSTALLATION STEPS FOR NEWER REACT NATIVE VERSIONS MAY BE DIFFERENT...)
 
+For expo managed projects skip to [expo setup guide](#setup-in-expo)
+
 Fast and easy:
 
 ```bash
 npm install react-native-immediate-phone-call --save
+```
+Add to your project automatically
+
+```bash
 react-native link react-native-immediate-phone-call
 ```
 
@@ -101,6 +107,27 @@ Or manual: add the latest version as dependency to your package.json.
       ...
     }
   ```
+
+## Setup in Expo
+
+Install package
+
+```bash
+npm install react-native-immediate-phone-call --save
+```
+
+In the app.json file of your expo project add:
+
+```js
+...
+       "permissions": [
+        ...
+        "android.permission.CALL_PHONE"   // <--- add to your project permissions
+      ],
+...
+```
+
+Note: React-native-immediate-phone-call won't work in **expo go** and **expo dev-client** app, you'll need to build an actual apk to test it. 
 
 ## Usage
 
